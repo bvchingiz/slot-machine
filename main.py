@@ -15,17 +15,25 @@ symbol_count  = {
 
 }
 
+
 def get_slot_machine_spin(rows, cols, symbols):
-    all_symbols = []
+    all_symbols = [] #the following loop goes through symbol_count dictionary above and gett all possible combinations and put themm in array
     for symbol, symbol_count in symbols.items():
         for _ in range (symbol_count):
             all_symbols.append(symbol)
 
     columns = []
-    for col in range(cols):
+    for _ in range(cols):
         column = []
-        for row in range(rows):
-            value = random.choice()
+        current_symbols = all_symbols[:]
+        for _ in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+            column.append(value)
+        
+        columns.append(column)
+
+
 
 
 
